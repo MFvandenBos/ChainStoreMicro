@@ -1,3 +1,4 @@
+/*
 package cards;
 
 public class GoldCard extends Card {
@@ -31,3 +32,4 @@ public class GoldCard extends Card {
         return discount;
     }
 }
+*/
