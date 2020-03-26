@@ -10,11 +10,9 @@ public class GoldCard extends Card {
 
     @Override
     public boolean pay(int amount) {
-        if((int)credit > amount ) {
-            credit -= (double)amount;
-            return true;
-        }
-        return false;
+        credit -= (double)amount;
+        return true;
+
     }
 
     public void setDiscount(int discount) throws ArgumentOutOfRangeException{
