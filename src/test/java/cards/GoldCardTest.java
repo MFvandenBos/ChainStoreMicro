@@ -10,6 +10,8 @@ class GoldCardTest {
 
     @Test
     void pay() {
+
+
     }
 
     @Test
