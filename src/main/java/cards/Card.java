@@ -1,8 +1,22 @@
 package cards;
 
-public class Card {
+public abstract class Card {
 
-    private int dingetjes;
-    private String dingetjes2;
+    protected final int cardId;
+    protected String name;
+    protected double credit;
+
+    public Card(int iD, String name, double credit)
+    {
+        this.cardId = iD;
+        this.name = name;
+        this.credit = credit;
+    }
+
+    public abstract boolean pay(int amount);
+
+       
+
+
 
 }
