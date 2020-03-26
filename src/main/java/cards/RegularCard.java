@@ -12,7 +12,7 @@ public class RegularCard extends Card{
 
     public void setCredit(double amount) {
         if (amount < 0) {
-            throw new NegativeCreditException();
+            throw new NegativeCreditException("Cannot have negative balance on Regular Card.");
         } else {
             this.credit = amount;
         }
@@ -20,8 +20,13 @@ public class RegularCard extends Card{
 
     @Override
     public boolean pay(int amount) {
-        double newCredit = getCredit() - amount;
-        setCredit(newCredit);
-        return true;
+        try{
+            double newCredit = getCredit() - amount;
+            setCredit(newCredit);
+            return true;
+        } catch (NegativeCreditException e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 }
