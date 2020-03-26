@@ -15,7 +15,7 @@ public abstract class Card {
 
     public abstract boolean pay(int amount);
 
-       
+
 
 
 
