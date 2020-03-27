@@ -10,20 +10,23 @@ public class GoldCard extends Card {
     }
 
     @Override
-    public boolean pay(int amount) {
+    public boolean pay(int amount) throws ArgumentOutOfRangeException {
+        if(amount<0)
+        {
+            throw new ArgumentOutOfRangeException("negative payments are not possible");
+        }
         credit -= (double)amount;
         return true;
 
     }
 
     public void setDiscount(int discount) throws ArgumentOutOfRangeException{
-        if( discount < 1 || discount > 30)
-        {
+        if( discount < 1 || discount > 30) {
             throw new ArgumentOutOfRangeException();
-        }else
-        {
+        }else {
             this.discount = discount;
         }
+
     }
 
     public int getDiscount() {

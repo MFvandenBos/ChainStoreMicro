@@ -1,7 +1,5 @@
 package cards;
 
-import static jdk.nashorn.internal.objects.NativeMath.round;
-
 public abstract class Card{
 
     protected final int cardId;
@@ -15,14 +13,14 @@ public abstract class Card{
         this.credit = credit;
     }
 
-    public abstract boolean pay(int amount);
+    public abstract boolean pay(int amount) throws ArgumentOutOfRangeException;
 
     public void setCredit(double credit) {
         this.credit = credit;
     }
 
     public double getCredit() {
-        return round(credit,2);
+        return Math.round(credit*100.0)/100.0;
     }
 
     public int getCardId() {

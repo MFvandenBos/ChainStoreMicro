@@ -35,8 +35,6 @@
             <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
-
-
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -56,7 +54,12 @@
             <version>2.22.2</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.15.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
