@@ -17,18 +17,15 @@ public class GoldCard extends Card {
         }
         credit -= (double)amount;
         return true;
-
     }
 
-    public void setDiscount(int discount) throws ArgumentOutOfRangeException{
-        if( discount < 1 || discount > 30) {
+    public void setDiscount(int discount) throws ArgumentOutOfRangeException {
+        if (discount < 1 || discount > 30) {
             throw new ArgumentOutOfRangeException();
-        }else {
+        } else {
             this.discount = discount;
         }
-
     }
-
     public int getDiscount() {
         return discount;
     }

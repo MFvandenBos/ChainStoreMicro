@@ -37,4 +37,25 @@ class GoldCardTest {
     @Test
     void setDiscount() {
     }
+
+    @Test
+    void setDiscount0ThrowsException() {
+        ArgumentOutOfRangeException e = Assertions.assertThrows(ArgumentOutOfRangeException.class, () -> target.setDiscount(0));
+    }
+
+    @Test
+    void setDiscountNegativeThrowsException() {
+        ArgumentOutOfRangeException e = Assertions.assertThrows(ArgumentOutOfRangeException.class, () -> target.setDiscount(-10));
+    }
+
+    @Test
+    void setDiscountAboveThirtyThrowsException() {
+        ArgumentOutOfRangeException e = Assertions.assertThrows(ArgumentOutOfRangeException.class, () -> target.setDiscount(31));
+    }
+
+    @Test
+    void setDiscounthirty() throws ArgumentOutOfRangeException {
+        target.setDiscount(30);
+        assertThat(target.getDiscount()).isEqualTo(30);
+    }
 }
