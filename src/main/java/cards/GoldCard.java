@@ -11,11 +11,14 @@ public class GoldCard extends Card {
 
     @Override
     public boolean pay(int amount) throws ArgumentOutOfRangeException {
+        int dis = getDiscount();
+        double discountL = getDiscount()/100.0;
+        double realAmount = amount*(1-discountL);
         if(amount<0)
         {
             throw new ArgumentOutOfRangeException("negative payments are not possible");
         }
-        credit -= (double)amount;
+        credit -= realAmount;
         return true;
     }
 

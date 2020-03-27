@@ -19,14 +19,18 @@ class GoldCardTest {
 
     @Test
     void pay_10() throws ArgumentOutOfRangeException {
+        target.setDiscount(10);
         target.pay(10);
-        assertThat(target.getCredit()).isEqualTo(122.15);
+
+        assertThat(target.getCredit()).isEqualTo(123.15);
     }
 
     @Test
     void pay_200() throws ArgumentOutOfRangeException {
+        target.setDiscount(20);
         target.pay(200);
-        assertThat(target.getCredit()).isEqualTo(132.15-200);
+
+        assertThat(target.getCredit()).isEqualTo(Math.round((132.15-(200.0*0.8))*100.0)/100.0);
     }
 
     @Test
